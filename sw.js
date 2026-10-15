@@ -1,5 +1,5 @@
 // Nasz Dom PWA – aktualizuj numer przy znaczącej zmianie plików aplikacji.
-const CACHE_NAME = 'nasz-dom-shell-v4';
+const CACHE_NAME = 'nasz-dom-shell-v5';
 const APP_SHELL = ['./', './index.html', './manifest.webmanifest', './icons/icon-192.png', './icons/icon-512.png', './icons/maskable-512.png', './icons/apple-touch-icon.png'];
 self.addEventListener('install', event => {
   event.waitUntil(caches.open(CACHE_NAME).then(cache => cache.addAll(APP_SHELL)).then(() => self.skipWaiting()));
