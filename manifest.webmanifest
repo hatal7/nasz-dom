@@ -1,0 +1,33 @@
+{
+  "name": "Nasz Dom — Mateusz i Edytka",
+  "short_name": "Nasz Dom",
+  "description": "Wspólne notatki, zakupy, kalendarz i rachunki domowe.",
+  "id": "./",
+  "start_url": "./",
+  "scope": "./",
+  "display": "standalone",
+  "background_color": "#0c0f17",
+  "theme_color": "#181d2b",
+  "lang": "pl",
+  "orientation": "any",
+  "icons": [
+    {
+      "src": "./icons/icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "./icons/icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "./icons/maskable-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "maskable"
+    }
+  ]
+}
