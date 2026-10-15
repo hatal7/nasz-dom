@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+
+<html lang="pl"><head><meta charset="utf-8"/><meta content="width=device-width,initial-scale=1" name="viewport"/><meta content="#10131c" name="theme-color"/><title>Nasz Dom — panel domowy</title><style>
+:root{font-family:Inter,system-ui,-apple-system,Segoe UI,sans-serif;color:#edf0f8;background:#0c0f17}*{box-sizing:border-box}body{margin:0}button,input,textarea,select{font:inherit}button{cursor:pointer}button:focus-visible,input:focus-visible,textarea:focus-visible,select:focus-visible{outline:2px solid #9a91ff;outline-offset:2px}.hidden{display:none!important}.login{min-height:100vh;display:grid;place-items:center;padding:20px;background:radial-gradient(circle at 20% 20%,#30274f 0,transparent 40%),#0c0f17}.loginbox{width:min(100%,430px);padding:32px;background:#181d2b;border:1px solid #34394a;border-radius:24px;box-shadow:0 20px 60px #0005}.logo{display:flex;align-items:center;gap:12px;font-weight:800;font-size:24px}.mark{display:grid;place-items:center;background:#8176f7;width:44px;height:44px;border-radius:14px;color:#fff}.muted{color:#9ba4b9}.loginbox p{line-height:1.5}.field{display:flex;flex-direction:column;gap:7px;margin:14px 0}.field input,.field select,.field textarea,.search{width:100%;background:#101522;border:1px solid #3a4153;color:#f3f4fb;border-radius:12px;padding:12px}.field textarea{resize:vertical;min-height:90px}.btn{background:#8176f7;border:0;border-radius:12px;padding:11px 15px;color:#fff;font-weight:700}.btn:hover{background:#958aff}.btn.ghost{background:#2a3040}.btn.danger{background:#4c2937;color:#ffb6c9}.btn.small{padding:7px 10px;font-size:13px}.wide{width:100%}.error{color:#ff9baf;min-height:22px;font-size:14px}.shell{display:grid;grid-template-columns:245px 1fr;min-height:100vh}.sidebar{background:#131824;border-right:1px solid #2b3040;padding:28px 18px;display:flex;flex-direction:column;gap:28px}.nav{display:grid;gap:7px}.nav button{background:transparent;color:#aeb7ca;border:0;border-radius:12px;text-align:left;padding:13px 15px;font-weight:650}.nav button.active,.nav button:hover{background:#292b46;color:#fff}.bottom{margin-top:auto}.main{padding:34px clamp(18px,4vw,60px);max-width:1450px;width:100%;margin:auto}.top{display:flex;justify-content:space-between;gap:15px;align-items:center;margin-bottom:28px}h1{font-size:clamp(27px,3vw,36px);margin:0 0 7px}h2{font-size:19px;margin:0}h3{margin:0;font-size:16px}.userpill{background:#262c3c;border:1px solid #3a4155;border-radius:99px;padding:10px 15px;color:#ddd}.grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:18px}.card{background:#181e2b;border:1px solid #303748;border-radius:20px;padding:22px;min-width:0}.cardhead{display:flex;justify-content:space-between;align-items:center;gap:12px;margin-bottom:18px}.pill{font-size:12px;background:#34304d;color:#c9c2ff;padding:6px 9px;border-radius:99px}.item{background:#222938;border:1px solid #353d4f;border-radius:12px;padding:12px;margin-top:10px;display:flex;align-items:flex-start;justify-content:space-between;gap:10px;overflow-wrap:anywhere}.item small{display:block;color:#9da9c0;margin-top:5px}.item p{white-space:pre-wrap;margin:8px 0 0;color:#c9d0df}.actions{display:flex;gap:6px;flex-shrink:0}.iconbtn{background:#353b4e;color:#d9def0;border:0;border-radius:9px;padding:7px 9px}.iconbtn:hover{background:#494f69}.empty{color:#a6aec0;padding:14px 0}.row{display:flex;gap:10px;align-items:center;flex-wrap:wrap}.row input{flex:1;min-width:130px}.check{accent-color:#8176f7;width:18px;height:18px}.done{text-decoration:line-through;opacity:.55}.calbar{display:flex;align-items:center;gap:10px}.calendar{display:grid;grid-template-columns:repeat(7,minmax(0,1fr));gap:5px}.daylabel{text-align:center;font-size:12px;color:#9da6ba;padding:8px 0}.day{background:#222938;border:1px solid #343c4e;border-radius:10px;min-height:82px;padding:7px;text-align:left;color:#e5e9f6;overflow:hidden}.day:hover{border-color:#8176f7}.day.dim{opacity:.35}.day.today{border-color:#9b91ff}.day.selected{background:#353154;border-color:#aaa0ff}.daynum{font-size:13px;font-weight:700}.dot{display:block;font-size:10px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;background:#4b4174;color:#e5ddff;border-radius:5px;padding:3px;margin-top:4px}.dot.a{background:#1e4fa5;color:#e2efff}.dot.b{background:#a52c70;color:#ffe2f1}.dot.both{background:#226e5b;color:#d6fff1}.event-a{border-left:4px solid #3b82f6}.event-b{border-left:4px solid #ec4899}.event-both{border-left:4px solid #34b899}.two{display:grid;grid-template-columns:1.4fr 1fr;gap:18px}.stack{display:grid;gap:18px}.subtle{font-size:13px;color:#9da6ba}.mobilehead{display:none}.section{display:none}.section.active{display:block}.stats{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-bottom:18px}.stat{background:#1d2331;border:1px solid #303748;border-radius:15px;padding:18px}.stat strong{font-size:27px;display:block;margin-top:6px}.toast{position:fixed;bottom:20px;right:20px;background:#2d3448;border:1px solid #5c6480;padding:13px 18px;border-radius:12px;box-shadow:0 10px 30px #0007;z-index:5}.hint{font-size:12px;color:#a6aec0;margin-top:12px;line-height:1.5}@media(max-width:900px){.shell{display:block}.sidebar{padding:12px;position:sticky;top:0;z-index:3;gap:12px}.sidebar>.logo,.bottom{display:none}.nav{display:flex;overflow:auto}.nav button{white-space:nowrap;padding:11px}.main{padding:24px 15px}.grid,.two{grid-template-columns:1fr}}@media(max-width:540px){.calendar{gap:3px}.day{min-height:60px;padding:4px;border-radius:7px}.daynum{font-size:11px}.dot{font-size:9px;height:auto;min-height:14px;padding:2px 3px;line-height:1.2;white-space:normal;overflow-wrap:anywhere}.event-clock{font-weight:800}.card{padding:15px}.stats{gap:6px}.stat{padding:11px}.stat strong{font-size:21px}.top{align-items:flex-start}.userpill{font-size:12px}}
+.bill-summary{display:grid;grid-template-columns:1fr 1fr;gap:12px}.bill-summary>div{background:#242c3b;border-radius:14px;padding:16px}.bill-summary strong{display:block;margin-top:8px;font-size:21px}.bill-status{font-size:11px;padding:4px 8px;border-radius:99px;background:#494057;color:#eee}.bill-status.paid{background:#1f5145;color:#baf8d9}.bill-status.late{background:#64313e;color:#ffbdca}.bill-status.pending{background:#51462c;color:#ffe6a2}.bill-item .actions{flex-wrap:wrap;justify-content:end}.account{overflow-wrap:anywhere;font-variant-numeric:tabular-nums;letter-spacing:.045em;font-weight:600;color:#c8f0e4}.btn:disabled{opacity:.4;cursor:not-allowed}@media(max-width:650px){.bill-summary{grid-template-columns:1fr}.bill-item{flex-direction:column}.bill-item .actions{justify-content:flex-start}}
+
+/* Kompaktowe podsumowanie po prawej stronie pulpitu */
+#dashboard .dashboard-layout{display:grid;grid-template-columns:minmax(0,1fr) 250px;gap:18px;align-items:start}
+#dashboard .stats{grid-column:2;grid-row:1;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:9px;margin:0;position:sticky;top:22px}
+#dashboard .stat{padding:12px 10px;border-radius:12px;min-height:88px}
+#dashboard .stat .subtle{font-size:11px;line-height:1.35;display:block}
+#dashboard .stat strong{font-size:23px;margin-top:7px}
+#dashboard .grid{grid-column:1;grid-row:1}
+@media(max-width:1100px){#dashboard .dashboard-layout{grid-template-columns:minmax(0,1fr) 210px}}
+@media(max-width:700px){#dashboard .dashboard-layout{display:flex;flex-direction:column}#dashboard .stats{position:static;width:100%;grid-template-columns:repeat(4,minmax(0,1fr))}#dashboard .grid{width:100%}#dashboard .stat{min-height:75px;padding:10px 7px}#dashboard .stat strong{font-size:21px}}
+@media(max-width:440px){#dashboard .stats{grid-template-columns:repeat(2,minmax(0,1fr))}}
+
+/* Kompaktowa lista zakupów dostosowana do obsługi kciukiem */
+.shopping-scroll{max-height:330px;overflow-y:auto;overscroll-behavior:contain;scrollbar-width:thin;scrollbar-color:#555f77 transparent;padding-right:4px}
+.shopping-full{max-height:min(58vh,570px)}
+.shopping-scroll .item{display:grid;grid-template-columns:minmax(0,1fr) 36px;align-items:center;gap:8px;padding:9px 10px;margin-top:7px;border-radius:12px;min-height:54px}
+.shopping-scroll .item>.row{min-width:0;flex-wrap:nowrap;gap:12px;align-items:center}
+.shopping-scroll .item>.row>div{min-width:0;overflow-wrap:anywhere;line-height:1.3}
+.shopping-scroll .item strong{font-size:14px;font-weight:650}
+.shopping-scroll .item small{margin-top:2px;font-size:12px}
+.shopping-scroll .check{width:21px;height:21px;flex:none;cursor:pointer}
+.shopping-scroll .iconbtn{width:36px;height:36px;padding:0;display:grid;place-items:center;font-size:20px}
+@media(max-width:540px){.shopping-scroll{max-height:300px}.shopping-full{max-height:55vh}.shopping-scroll .item{min-height:52px;padding:7px 9px}.shopping-scroll .item strong{font-size:14px}.cardhead h2{font-size:17px}.cardhead .btn.small{font-size:12px;padding:8px 10px}}
+
+/* Nasz Dom: pulpit mobile-first, wersja 2 */
+.dash-welcome{margin:0 0 16px}.dash-eyebrow{font-size:10px;letter-spacing:.14em;font-weight:800;color:#a69aff}.dash-welcome h2{font-size:24px;margin:5px 0 5px;letter-spacing:-.04em}.dash-welcome h2 span{color:#b1a3ff}.dash-welcome p{margin:0;color:#9fa9bd;font-size:13px}.quick-panel{background:linear-gradient(125deg,#2b2549,#212438);border:1px solid #494263;border-radius:18px;padding:16px 18px;margin-bottom:17px}.quick-title{font-weight:750;font-size:14px;margin-bottom:12px;color:#e3ddff}.quick-buttons{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:9px}.quick-btn{background:#443c62;color:#fff;border:1px solid #5b527b;border-radius:12px;min-height:48px;font-size:13px;font-weight:750;padding:8px}.quick-btn span{font-size:18px;margin-right:4px;color:#d0c4ff}.quick-btn:active{transform:scale(.98)}
+#dashboard .stats{position:static}#dashboard .stat{background:#202636}#dashboard .stat strong{font-size:22px}#dashboard .grid{align-content:start}#dashboard .card{padding:17px}#dashboard .cardhead{margin-bottom:12px}#dashboard .item{padding:10px;margin-top:7px}
+.mobile-bottom-nav{display:none}.quick-dialog{max-height:min(90dvh,740px);overflow-y:auto}.quick-dialog-head{display:flex;align-items:flex-start;justify-content:space-between;gap:10px;margin-bottom:12px}.quick-dialog-head h3{margin:4px 0 0}.quick-fields .field{margin:11px 0}.quick-fields textarea{min-height:76px}.more-links{display:grid;gap:9px}.more-links button{display:flex;justify-content:space-between;align-items:center;border:1px solid #3b435b;background:#262d41;color:#f3f3ff;padding:17px;border-radius:13px;font-weight:700;text-align:left;min-height:52px}.more-links span{color:#b8acf9;font-size:20px}
+@media(max-width:900px){.sidebar{display:none}.main{padding:20px 14px calc(100px + env(safe-area-inset-bottom));max-width:680px}.mobile-bottom-nav{display:flex;position:fixed;bottom:0;left:0;right:0;z-index:4;background:#171d2af5;border-top:1px solid #343c50;box-shadow:0 -8px 35px #080b13a6;padding:8px max(10px,env(safe-area-inset-left)) calc(8px + env(safe-area-inset-bottom));justify-content:space-around;gap:3px;backdrop-filter:blur(18px)}.mobile-bottom-nav button{background:none;border:0;color:#a9b1c3;border-radius:12px;display:flex;align-items:center;flex-direction:column;justify-content:center;gap:3px;min-width:0;flex:1;padding:6px 3px;font-size:11px;font-weight:700;min-height:49px}.mobile-bottom-nav button.active{background:#302d50;color:#d2c9ff}.nav-ico{font-size:21px;line-height:1.05}.top{margin-bottom:17px}.userpill{padding:8px 10px}#dashboard .dashboard-layout{display:flex;flex-direction:column}#dashboard .stats{order:0;display:grid;grid-template-columns:repeat(4,minmax(0,1fr));width:100%;gap:7px}#dashboard .grid{order:1;display:grid;grid-template-columns:1fr;gap:13px;width:100%}#dashboard .stat{padding:10px 7px;min-height:72px}#dashboard .stat .subtle{font-size:10px}#dashboard .stat strong{font-size:21px}#dashboard .card{border-radius:17px}#dashboard .card:nth-child(2){order:0}#dashboard .card:nth-child(1){order:1}#dashboard .card:nth-child(4){order:2}#dashboard .card:nth-child(3){order:3}.toast{bottom:90px;right:12px;left:12px;text-align:center}}
+@media(max-width:430px){#dashboard .stats{grid-template-columns:repeat(4,minmax(0,1fr))}#dashboard .stat strong{font-size:19px}#dashboard .stat .subtle{font-size:10px;overflow-wrap:anywhere}.quick-panel{padding:14px}.quick-btn{font-size:12px;padding:6px 3px}.quick-btn span{font-size:15px}.dash-welcome h2{font-size:22px}.top h1{font-size:25px}.mobile-bottom-nav{padding-bottom:calc(6px + env(safe-area-inset-bottom))}}
+
+/* Zwarty nagłówek: mniejsze powitanie i czytelniejsza data obok */
+.heading-line{display:flex;align-items:baseline;flex-wrap:wrap;gap:5px 16px}
+.heading-line h1{font-size:clamp(19px,2vw,25px);line-height:1.3;margin:0;letter-spacing:-.025em}
+.heading-line #todayText{font-size:clamp(14px,1.3vw,17px);line-height:1.4;color:#bfc8dd;font-weight:500}
+@media(max-width:540px){.heading-line{gap:3px 9px}.heading-line h1{font-size:19px}.heading-line #todayText{font-size:14px}.top{align-items:center;gap:8px}.userpill{white-space:nowrap;padding:7px 9px}}
+@media(max-width:360px){.heading-line{display:block}.heading-line #todayText{margin-top:3px}}
+</style><style id="theme-styles">
+/* Motywy: zachowujemy oryginalny ciemny, jasny w tonacji beżowo-kawowej */
+.theme-toggle{appearance:none;display:inline-flex;align-items:center;justify-content:center;gap:7px;border-radius:999px;border:1px solid #41465a;background:#262c3c;color:#f4f5ff;padding:9px 12px;min-height:40px;font-weight:700;font-size:13px;white-space:nowrap;cursor:pointer}
+.theme-toggle:hover{filter:brightness(1.08)}.theme-toggle .theme-icon{font-size:17px;line-height:1}.top-actions{display:flex;align-items:center;gap:9px;flex-shrink:0}.login-theme-wrap{position:absolute;right:18px;top:18px}.login{position:relative}
+@media(max-width:540px){.top-actions{gap:5px}.theme-toggle{padding:8px 10px;min-height:36px}.theme-toggle .theme-label{display:none}.userpill{font-size:11px}.login-theme-wrap .theme-label{display:inline}}
+html[data-theme="light"]{color-scheme:light;background:#f8f5ef;color:#382f29}
+html[data-theme="light"] body{background:#f8f5ef;color:#382f29}
+html[data-theme="light"] .login{background:radial-gradient(circle at 20% 16%,#ead9cb 0,transparent 45%),#f8f5ef}
+html[data-theme="light"] .loginbox{background:#fffdfa;border-color:#e2d6c9;box-shadow:0 16px 50px #70544016}
+html[data-theme="light"] .sidebar{background:#f2ebe3;border-color:#e1d5ca}
+html[data-theme="light"] .nav button{color:#706257}
+html[data-theme="light"] .nav button.active,html[data-theme="light"] .nav button:hover{background:#e8d9c9;color:#47352c}
+html[data-theme="light"] .muted,html[data-theme="light"] .subtle,html[data-theme="light"] .empty,html[data-theme="light"] .hint{color:#77685c}
+html[data-theme="light"] .userpill,html[data-theme="light"] .theme-toggle{background:#f3e9dd;border-color:#ddcebe;color:#594638}
+html[data-theme="light"] .card,html[data-theme="light"] .stat{background:#fffdfa;border-color:#e6dbce;box-shadow:0 3px 16px #76543c09}
+html[data-theme="light"] .item,html[data-theme="light"] .day{background:#f5f0e9;border-color:#e4d8cb;color:#3c3028}
+html[data-theme="light"] .item small,html[data-theme="light"] .item p,html[data-theme="light"] .daylabel{color:#746558}
+html[data-theme="light"] .item.done{opacity:.65}
+html[data-theme="light"] .iconbtn{background:#e9dfd4;color:#4f3c31}
+html[data-theme="light"] .iconbtn:hover{background:#dccbb9}
+html[data-theme="light"] .field input,html[data-theme="light"] .field select,html[data-theme="light"] .field textarea,html[data-theme="light"] .search{background:#fffdf9;color:#342b25;border-color:#d8cbbd}
+html[data-theme="light"] input::placeholder,html[data-theme="light"] textarea::placeholder{color:#968679}
+html[data-theme="light"] .btn{background:#796251;color:#fff}
+html[data-theme="light"] .btn:hover{background:#634c3b}
+html[data-theme="light"] .btn.ghost{background:#e9dfd4;color:#4c392d}
+html[data-theme="light"] .btn.danger{background:#f4e3e3;color:#9b3445}
+html[data-theme="light"] .mark{background:#9c806c}
+html[data-theme="light"] .pill{background:#efe2d5;color:#694d3a}
+html[data-theme="light"] .day:hover{border-color:#9f806a}
+html[data-theme="light"] .day.today{border-color:#98785d}
+html[data-theme="light"] .day.selected{background:#eddfcf;border-color:#a7856c}
+html[data-theme="light"] .dot{background:#e1d0be;color:#493629}
+html[data-theme="light"] .dot.a{background:#dceafb;color:#22549b}
+html[data-theme="light"] .dot.b{background:#f8daeb;color:#97315e}
+html[data-theme="light"] .dot.both{background:#d8efe4;color:#256b51}
+html[data-theme="light"] .bill-summary>div{background:#f3ece3}
+html[data-theme="light"] .bill-status{background:#e8dccf;color:#655040}
+html[data-theme="light"] .bill-status.paid{background:#dceee3;color:#2e6b4a}
+html[data-theme="light"] .bill-status.late{background:#f6dce0;color:#962d40}
+html[data-theme="light"] .bill-status.pending{background:#f6eccd;color:#765822}
+html[data-theme="light"] .account{color:#326757}
+html[data-theme="light"] .quick-panel{background:linear-gradient(125deg,#f1e7dd,#e9d9c9);border-color:#dcc8b5}
+html[data-theme="light"] .quick-title{color:#584439}
+html[data-theme="light"] .quick-btn{background:#fffaf4;color:#654d3d;border-color:#d5beaa}
+html[data-theme="light"] .quick-btn span{color:#9b7962}
+html[data-theme="light"] .dash-eyebrow,html[data-theme="light"] .dash-welcome h2 span{color:#926f58}
+html[data-theme="light"] .dash-welcome p{color:#716153}
+html[data-theme="light"] .heading-line #todayText{color:#736154}
+html[data-theme="light"] .more-links button{background:#f4ece3;color:#4c3b30;border-color:#dfd0c1}
+html[data-theme="light"] .more-links span{color:#96735b}
+html[data-theme="light"] .toast{background:#fffaf3;border-color:#d7c6b4;box-shadow:0 10px 30px #4e36252a;color:#49382d}
+html[data-theme="light"] .event-dialog{background:#fffaf4;color:#382c25;border-color:#ddcabb;box-shadow:0 24px 70px #4c362f38}
+html[data-theme="light"] .event-dialog p{color:#766457}
+html[data-theme="light"] .event-dialog::backdrop{background:#281e1766}
+html[data-theme="light"] .event-danger{background:#b84554!important;color:white!important}
+html[data-theme="light"] .mobile-bottom-nav{background:#faf6f0f5;border-top-color:#ded0c2;box-shadow:0 -8px 30px #6b4c291b}
+html[data-theme="light"] .mobile-bottom-nav button{color:#76695f}
+html[data-theme="light"] .mobile-bottom-nav button.active{background:#e9d9c9;color:#694c38}
+html[data-theme="light"] .shopping-scroll{scrollbar-color:#c7b3a0 transparent}
+html[data-theme="light"] .check{accent-color:#896c54}
+html[data-theme="light"] button:focus-visible,html[data-theme="light"] input:focus-visible,html[data-theme="light"] textarea:focus-visible,html[data-theme="light"] select:focus-visible{outline-color:#9d765b}
+
+/* Jasny motyw: liczniki pulpitu mają osobny selektor #dashboard */
+html[data-theme="light"] #dashboard .stat{background:#fffdfa;border-color:#e4d7c8;color:#3d3129;box-shadow:0 3px 15px rgba(95,66,42,.08)}
+html[data-theme="light"] #dashboard .stat strong{color:#5b4435}
+html[data-theme="light"] #dashboard .stat .subtle{color:#806d5e}
+html[data-theme="light"] .bill-summary>div{background:#f3ebe1;color:#46372c}
+html[data-theme="light"] .event-dialog .field input,html[data-theme="light"] .event-dialog .field textarea{background:#fffdfa;color:#382f29;border-color:#d8cbbd}
+.note-edit-form{display:grid;gap:13px;margin-top:14px}.note-edit-form .field{margin:0}
+.note-edit-form textarea{min-height:130px;resize:vertical}
+.note-edit-form .event-dialog-actions{margin-top:7px}
+</style><script id="theme-script">(function(){
+  'use strict';
+  const storageKey='nasz-dom-theme-v1';
+  let mode='dark';
+  try { const stored=localStorage.getItem(storageKey);if(stored==='light'||stored==='dark')mode=stored; }catch(e){}
+  function applyTheme(value){
+    mode=value;
+    document.documentElement.dataset.theme=mode;
+    document.querySelectorAll('[data-theme-toggle]').forEach(function(btn){
+      const light=mode==='light';
+      btn.querySelector('.theme-icon').textContent=light?'☾':'☀';
+      btn.querySelector('.theme-label').textContent=light?'Ciemny':'Jasny';
+      btn.setAttribute('aria-label',light?'Przełącz na ciemny motyw':'Przełącz na jasny motyw');
+      btn.title=light?'Włącz ciemny motyw':'Włącz jasny motyw';
+    });
+    try {localStorage.setItem(storageKey,mode);}catch(e){}
+  }
+  document.addEventListener('click',function(ev){
+    if(ev.target.closest('[data-theme-toggle]'))applyTheme(mode==='dark'?'light':'dark');
+  });
+  applyTheme(mode);
+})();</script></head><body>
+<div class="login" id="login"><div class="login-theme-wrap"><button aria-label="Przełącz na jasny motyw" class="theme-toggle" data-theme-toggle="" title="Zmień motyw strony" type="button"><span aria-hidden="true" class="theme-icon">☀</span><span class="theme-label">Jasny</span></button></div><div class="loginbox"><div class="logo"><span class="mark">⌂</span>Nasz Dom</div><h1 style="margin-top:30px">Witaj w domu 👋</h1><p class="muted">Zaloguj się, aby otworzyć wspólną przestrzeń Mateusza i Edytki.</p><form id="loginForm"><label class="field">Login<input id="username" type="text" autocapitalize="none" spellcheck="false" autocomplete="username" maxlength="30" required placeholder="mateusz lub edytka"/></label><label class="field">Hasło<input id="password" type="password" autocomplete="current-password" required placeholder="Hasło do Nasz Dom"/></label><div class="error" id="loginError" role="alert"></div><button class="btn wide" id="loginSubmit">Zaloguj się →</button></form><p class="hint">Wpisz login mateusz lub edytka oraz hasło konta utworzonego w Supabase. Dane są współdzielone tylko przez domowników przypisanych do Waszego gospodarstwa.</p></div></div>
+<div class="shell hidden" id="app"><aside class="sidebar"><div class="logo"><span class="mark">⌂</span>Nasz Dom</div><nav class="nav" id="nav"><button class="active" data-tab="dashboard">⌂   Pulpit</button><button data-tab="notes">▤   Notatki</button><button data-tab="shopping">🛒   Zakupy</button><button data-tab="calendar">▦   Kalendarz</button><button data-tab="bills">▣   Rachunki</button><button data-tab="settings">⚙   Ustawienia</button></nav><div class="bottom"><button class="btn ghost wide" id="logout">Wyloguj się</button></div></aside><main class="main"><div class="top"><div class="heading-line"><h1 id="pageTitle">Dzień dobry! 👋</h1><div class="muted" id="todayText"></div></div><div class="top-actions"><button aria-label="Przełącz na jasny motyw" class="theme-toggle" data-theme-toggle="" title="Zmień motyw strony" type="button"><span aria-hidden="true" class="theme-icon">☀</span><span class="theme-label">Jasny</span></button><div class="userpill" id="who"></div></div></div>
+<section class="section active" id="dashboard"><div class="quick-panel"><div class="quick-title">✦   Szybkie dodawanie</div><div class="quick-buttons"><button class="quick-btn" data-quick="shopping" type="button"><span>＋</span> Zakup</button><button class="quick-btn" data-quick="calendar" type="button"><span>＋</span> Wydarzenie</button><button class="quick-btn" data-quick="notes" type="button"><span>＋</span> Notatka</button></div></div><div class="dashboard-layout"><div class="stats"><div class="stat"><span class="subtle">Notatki</span><strong id="countNotes">0</strong></div><div class="stat"><span class="subtle">Do kupienia</span><strong id="countShopping">0</strong></div><div class="stat"><span class="subtle">Wydarzenia</span><strong id="countEvents">0</strong></div><div class="stat"><span class="subtle">Rachunki do zapłaty</span><strong id="countBills">0</strong></div></div><div class="grid"><div class="card"><div class="cardhead"><h2>🛒 Lista zakupów</h2><button class="btn small ghost" data-goto="shopping">Zobacz wszystko</button></div><div aria-label="Lista zakupów, przewijana" class="shopping-scroll" id="dashShopping" tabindex="0"></div></div><div class="card"><div class="cardhead"><h2>📅 Nadchodzące wydarzenia</h2><button class="btn small ghost" data-goto="calendar">Kalendarz</button></div><div id="dashEvents"></div></div><div class="card"><div class="cardhead"><h2>📝 Ostatnie notatki</h2><button class="btn small ghost" data-goto="notes">Notatki</button></div><div id="dashNotes"></div></div><div class="card"><div class="cardhead"><h2>💳 Najbliższe rachunki</h2><button class="btn small ghost" data-goto="bills">Rachunki</button></div><div id="dashBills"></div></div></div></div></section>
+<section class="section" id="notes"><div class="two"><div class="card"><h2>Wszystkie notatki</h2><div id="notesList"></div></div><form class="card" id="noteForm"><h2>Nowa notatka</h2><label class="field">Tytuł<input id="noteTitle" maxlength="100" placeholder="Np. Pomysły na weekend" required=""/></label><label class="field">Treść<textarea id="noteBody" maxlength="3000" placeholder="Zapisz, o czym warto pamiętać..."></textarea></label><button class="btn">+ Dodaj notatkę</button></form></div></section>
+<section class="section" id="shopping"><div class="two"><div class="card"><div class="cardhead"><h2>Lista zakupów</h2><span class="pill" id="shoppingBadge"></span></div><div aria-label="Produkty na liście zakupów" class="shopping-scroll shopping-full" id="shoppingList" tabindex="0"></div><button class="btn danger small" id="clearBought" style="margin-top:14px">🗑 Usuń kupione (<span id="boughtCount">0</span>)</button></div><form class="card" id="shoppingForm"><h2>Dodaj produkt</h2><label class="field">Produkt<input id="productName" maxlength="100" placeholder="Np. Mleko" required=""/></label><label class="field">Ilość / uwagi<input id="productQty" maxlength="100" placeholder="Np. 2 litry"/></label><button class="btn">+ Dodaj do listy</button></form></div></section>
+<section class="section" id="calendar"><div class="two"><div class="card"><div class="cardhead"><div class="calbar"><button aria-label="Poprzedni miesiąc" class="iconbtn" id="prevMonth">‹</button><h2 id="monthLabel"></h2><button aria-label="Następny miesiąc" class="iconbtn" id="nextMonth">›</button></div><button class="btn ghost small" id="goToday">Dziś</button></div><div class="calendar" id="calGrid"></div></div><div class="stack"><form class="card" id="eventForm"><h2 id="eventFormHeading">Dodaj wydarzenie</h2><label class="field">Nazwa<input id="eventTitle" maxlength="120" placeholder="Np. Fryzjer, kino, kosmetyczka" required=""/></label><label class="field">Data<input id="eventDate" required="" type="date"/></label><label class="field">Godzina (opcjonalnie)<input id="eventTime" type="time"/></label><label class="field">Dla kogo?<select id="eventOwner"><option value="both">Oboje</option><option value="a">Mateusz</option><option value="b">Edytka</option></select></label><label class="field">Opis (opcjonalnie)<textarea id="eventDesc" maxlength="1000" placeholder="Miejsce, dodatkowe informacje..."></textarea></label><div class="row"><button class="btn" id="saveEventBtn">+ Zapisz wydarzenie</button><button class="btn ghost hidden" id="cancelEventEdit" type="button">Anuluj edycję</button></div></form><div class="card"><h2 id="selectedLabel">Wydarzenia</h2><div id="selectedEvents"></div></div></div></div></section>
+<section class="section" id="bills"><div class="two"><div class="card"><div class="cardhead"><h2>💳 Rachunki domowe</h2><span class="pill" id="billsBadge"></span></div><div class="bill-summary"><div><span class="subtle">Do zapłaty</span><strong id="billsTotal">0,00 zł</strong></div><div><span class="subtle">Opłacone</span><strong id="billsPaid">0,00 zł</strong></div></div><div class="row" style="margin-top:18px"><label class="subtle" for="billFilter">Pokaż</label><select class="search" id="billFilter" style="width:auto;min-width:180px"><option value="all">Wszystkie</option><option value="unpaid">Do zapłaty</option><option value="paid">Opłacone</option></select></div><div id="billsList"></div></div><form class="card" id="billForm"><h2>Dodaj rachunek</h2><label class="field">Rodzaj rachunku<select id="billType" required=""><option value="Gaz">🔥 Gaz</option><option value="Prąd">⚡ Prąd</option><option value="Czynsz">🏠 Czynsz</option><option value="Internet / TV">📺 Internet / TV</option></select></label><label class="field">Numer faktury / rachunku<input id="billInvoice" maxlength="120" placeholder="Np. FV/10/2026/123" required=""/></label><label class="field">Termin płatności<input id="billDue" inputmode="numeric" maxlength="10" placeholder="DD.MM.RRRR (np. 5.11.2026)" required="" type="text"/></label><label class="field">Numer konta do przelewu<input id="billAccount" inputmode="numeric" maxlength="40" placeholder="86 1234 1234 1234 1234 1234 1234" required=""/></label><label class="field">Kwota (zł)<input id="billAmount" max="99999999" min="0.01" placeholder="Np. 249,90" required="" step="0.01" type="number"/></label><button class="btn">+ Dodaj rachunek</button><p class="hint">Rachunki zapisują się we wspólnej bazie gospodarstwa, dostępnej po zalogowaniu.</p></form></div></section>
+<section class="section" id="settings"><div class="two"><form class="card" id="profileForm"><h2>Domownicy</h2><label class="field">Imię pierwszej osoby<input id="nameA" maxlength="30" required=""/></label><label class="field">Imię drugiej osoby<input id="nameB" maxlength="30" required=""/></label><button class="btn">Zapisz imiona</button></form><form class="card" id="pinForm"><h2>Zmień hasło konta</h2><label class="field">Nowe hasło (minimum 8 znaków)<input id="newPassword" minlength="8" autocomplete="new-password" required type="password"/></label><button class="btn">Zmień hasło</button><p class="hint">Logowanie jest zabezpieczone przez Supabase Auth. Nie używamy już demonstracyjnych PIN-ów.</p></form></div><div style="margin-top:18px"><button class="btn ghost" id="logoutSettings">Wyloguj się</button></div></section>
+</main><nav aria-label="Nawigacja na telefonie" class="mobile-bottom-nav"><button class="active" data-tab="dashboard" type="button"><span class="nav-ico">⌂</span><span>Start</span></button><button data-tab="calendar" type="button"><span class="nav-ico">▦</span><span>Kalendarz</span></button><button data-tab="shopping" type="button"><span class="nav-ico">🛒</span><span>Zakupy</span></button><button id="mobileMore" type="button"><span class="nav-ico">☷</span><span>Więcej</span></button></nav></div><div class="toast hidden" id="toast" role="status"></div>
+<style>
+.event-dialog{border:1px solid #39435a;border-radius:20px;background:#1b2231;color:#f4f6ff;padding:0;width:min(410px,calc(100vw - 32px));max-width:410px;box-shadow:0 24px 80px #000a}
+.event-dialog::backdrop{background:rgba(4,7,15,.75);backdrop-filter:blur(5px)}
+.event-dialog-inner{padding:24px}.event-dialog h3{margin:0 0 10px;font-size:20px}.event-dialog p{color:#aebad0;line-height:1.5;overflow-wrap:anywhere}.event-dialog-actions{display:flex;gap:10px;justify-content:flex-end;margin-top:22px;flex-wrap:wrap}.event-danger{background:#c84360!important;color:white!important}.event-dialog .event-dialog-actions button{min-height:43px}
+@media(max-width:480px){.event-dialog-inner{padding:20px}.event-dialog-actions button{flex:1}}
+</style>
+<dialog aria-describedby="eventDeleteText" aria-labelledby="eventDeleteTitle" class="event-dialog" id="eventDeleteDialog"><div class="event-dialog-inner"><h3 id="eventDeleteTitle">Usunąć wydarzenie?</h3><p id="eventDeleteText"></p><div class="event-dialog-actions"><button class="btn ghost" id="eventDeleteCancel" type="button">Anuluj</button><button class="btn event-danger" id="eventDeleteConfirm" type="button">Usuń wydarzenie</button></div></div></dialog>
+<dialog aria-describedby="deleteConfirmText" aria-labelledby="deleteConfirmTitle" class="event-dialog" id="deleteConfirmDialog"><div class="event-dialog-inner"><h3 id="deleteConfirmTitle">Potwierdź usunięcie</h3><p id="deleteConfirmText"></p><div class="event-dialog-actions"><button class="btn secondary" id="deleteConfirmCancel" type="button">Anuluj</button><button class="btn danger" id="deleteConfirmYes" type="button">Usuń</button></div></div></dialog>
+<dialog id="noteEditDialog" class="event-dialog" aria-labelledby="noteEditHeading"><form class="event-dialog-inner note-edit-form" id="noteEditForm"><h3 id="noteEditHeading">Edytuj notatkę</h3><label class="field">Tytuł<input type="text" id="noteEditTitle" maxlength="100" required placeholder="Tytuł notatki"/></label><label class="field">Treść<textarea id="noteEditBody" maxlength="3000" placeholder="Treść notatki"></textarea></label><div class="event-dialog-actions"><button class="btn ghost" type="button" id="noteEditCancel">Anuluj</button><button class="btn" type="submit">Zapisz zmiany</button></div></form></dialog>
+<dialog aria-labelledby="quickHeading" class="event-dialog quick-dialog" id="quickDialog"><form class="event-dialog-inner" id="quickForm"><div class="quick-dialog-head"><div><span class="dash-eyebrow">NASZ DOM</span><h3 id="quickHeading">Dodaj</h3></div><button aria-label="Zamknij" class="iconbtn" id="quickClose" type="button">×</button></div><div class="quick-fields" id="quickShopping"><label class="field">Produkt<input autocomplete="off" id="quickProduct" maxlength="100" placeholder="Np. Mleko"/></label><label class="field">Ilość / uwagi<input id="quickQty" maxlength="100" placeholder="Np. 2 sztuki"/></label></div><div class="quick-fields hidden" id="quickCalendar"><label class="field">Wydarzenie<input id="quickEventTitle" maxlength="120" placeholder="Np. Kino"/></label><label class="field">Data<input id="quickEventDate" type="date"/></label><label class="field">Godzina<input id="quickEventTime" type="time"/></label><label class="field">Dla kogo?<select id="quickEventOwner"><option value="both">Oboje</option><option value="a">Mateusz</option><option value="b">Edytka</option></select></label><label class="field">Opis (opcjonalnie)<textarea id="quickEventDesc" maxlength="1000" rows="2"></textarea></label></div><div class="quick-fields hidden" id="quickNotes"><label class="field">Tytuł notatki<input id="quickNoteTitle" maxlength="100" placeholder="Np. Pomysły na weekend"/></label><label class="field">Treść<textarea id="quickNoteBody" maxlength="3000" placeholder="Co warto zapamiętać?"></textarea></label></div><div class="event-dialog-actions"><button class="btn ghost" id="quickCancel" type="button">Anuluj</button><button class="btn" id="quickSave" type="submit">Dodaj</button></div></form></dialog><dialog aria-labelledby="moreHeading" class="event-dialog more-dialog" id="moreDialog"><div class="event-dialog-inner"><div class="quick-dialog-head"><h3 id="moreHeading">Pozostałe zakładki</h3><button aria-label="Zamknij" class="iconbtn" id="moreClose" type="button">×</button></div><div class="more-links"><button data-more-tab="notes" type="button">▤   Notatki <span>›</span></button><button data-more-tab="bills" type="button">▣   Rachunki <span>›</span></button><button data-more-tab="settings" type="button">⚙   Ustawienia <span>›</span></button></div></div></dialog>
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2/dist/umd/supabase.min.js"></script>
+<script defer>
+(()=>{'use strict';const SB_URL='https://eeikbdfanpjctofuzokz.supabase.co';
+const SB_KEY='sb_publishable_XOcjm8YIS3OU8z2-gV1HSQ_UxI4EqpX';
+const initial={names:{a:'Mateusz',b:'Edytka'},notes:[],shopping:[],events:[],bills:[]};
+let data=structuredClone(initial), editingEventId=null;
+let client=null, houseId=null, members=[], channel=null, synced=structuredClone(initial);
+let writeQueue=Promise.resolve(),activeWrites=0,refreshScheduled=false,loading=false;
+const KINDS=['notes','shopping','events','bills'];
+const clone=o=>JSON.parse(JSON.stringify(o));
+function notifyError(err){console.error('Nasz Dom: błąd Supabase',err);toast('Nie zapisano zmian. Sprawdź połączenie.');}
+function rowDiff(oldData,newData){
+  const ops=[];
+  for(const kind of KINDS){
+    const before=new Map((oldData[kind]||[]).map(x=>[x.id,x]));
+    const after=new Map((newData[kind]||[]).map(x=>[x.id,x]));
+    for(const [id,item] of after)if(!before.has(id)||JSON.stringify(before.get(id))!==JSON.stringify(item))ops.push({kind,id,item});
+    for(const [id] of before)if(!after.has(id))ops.push({kind,id,remove:true});
+  }
+  for(const slot of ['a','b'])if(oldData.names[slot]!==newData.names[slot])ops.push({rename:slot,value:newData.names[slot]});
+  return ops;
+}
+async function performOps(ops){
+  for(const op of ops){
+    let response;
+    if(op.rename){
+      const member=members.find(m=>m.slot===op.rename);
+      response=await client.from('household_members').update({display_name:op.value}).eq('user_id',member.user_id).eq('household_id',houseId);
+    }else if(op.remove){
+      response=await client.from('home_items').delete().eq('id',op.id).eq('household_id',houseId);
+    }else{
+      response=await client.from('home_items').upsert({id:op.id,household_id:houseId,kind:op.kind,payload:op.item,updated_at:new Date().toISOString()});
+    }
+    if(response.error)throw response.error;
+  }
+}
+function queueSync(){
+  if(!current||!houseId)return;
+  const updated=clone(data),ops=rowDiff(synced,updated);
+  if(!ops.length)return;
+  synced=updated;
+  activeWrites++;
+  writeQueue=writeQueue.catch(()=>{}).then(()=>performOps(ops)).catch(async error=>{notifyError(error);refreshScheduled=true;}).finally(async()=>{
+    activeWrites--;
+    if(!activeWrites&&refreshScheduled){refreshScheduled=false;await loadRemote();}
+  });
+}
+async function loadRemote(){
+  if(!current||!houseId)return;
+  if(activeWrites){refreshScheduled=true;return;}
+  if(loading){refreshScheduled=true;return;}
+  loading=true;
+  try{
+    const [itemsResult,membersResult]=await Promise.all([
+      client.from('home_items').select('id,kind,payload').eq('household_id',houseId),
+      client.from('household_members').select('user_id,slot,display_name').eq('household_id',houseId)
+    ]);
+    if(itemsResult.error)throw itemsResult.error;
+    if(membersResult.error)throw membersResult.error;
+    members=membersResult.data;
+    const next=structuredClone(initial);
+    for(const m of members)next.names[m.slot]=m.display_name;
+    for(const row of itemsResult.data){if(KINDS.includes(row.kind))next[row.kind].push({...row.payload,id:row.id});}
+    data=next;synced=clone(next);render();
+  }catch(err){notifyError(err)}
+  finally{loading=false;if(refreshScheduled&&!activeWrites){refreshScheduled=false;setTimeout(loadRemote,100)}}
+}
+function connectRealtime(){
+  if(channel)client.removeChannel(channel);
+  channel=client.channel('nasz-dom-'+houseId)
+    .on('postgres_changes',{event:'*',schema:'public',table:'home_items',filter:'household_id=eq.'+houseId},()=>{
+      if(activeWrites)refreshScheduled=true;else loadRemote();
+    })
+    .on('postgres_changes',{event:'*',schema:'public',table:'household_members',filter:'household_id=eq.'+houseId},()=>{
+      if(activeWrites)refreshScheduled=true;else loadRemote();
+    }).subscribe();
+}
+async function enterApp(user){
+  const membership=await client.from('household_members').select('household_id,slot,display_name').eq('user_id',user.id).maybeSingle();
+  if(membership.error)throw membership.error;
+  if(!membership.data)throw new Error('Konto nie zostało jeszcze przypisane do Nasz Dom. Uzupełnij konfigurację SQL.');
+  houseId=membership.data.household_id;current=membership.data.slot;
+  const memberRows=await client.from('household_members').select('user_id,slot,display_name').eq('household_id',houseId);
+  if(memberRows.error)throw memberRows.error;
+  members=memberRows.data;
+  $('login').classList.add('hidden');$('app').classList.remove('hidden');
+  await loadRemote();showTab('dashboard');connectRealtime();
+}
+let current=null,tab='dashboard',month=new Date();month=new Date(month.getFullYear(),month.getMonth(),1);let selected=localDate(new Date());const $=id=>document.getElementById(id);const esc=s=>String(s??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));function localDate(d){return [d.getFullYear(),String(d.getMonth()+1).padStart(2,'0'),String(d.getDate()).padStart(2,'0')].join('-')}function save(){render();queueSync()}function toast(msg){$('toast').textContent=msg;$('toast').classList.remove('hidden');setTimeout(()=>$('toast').classList.add('hidden'),2600)}function uid(){return crypto.randomUUID?crypto.randomUUID():String(Date.now())+Math.random()}function formatDate(s){const [y,m,d]=s.split('-').map(Number);return new Date(y,m-1,d).toLocaleDateString('pl-PL',{day:'numeric',month:'long',year:'numeric'})}function ownerName(o){return o==='both'?'Oboje':data.names[o]||'Domownik'}function showTab(t){tab=t;document.querySelectorAll('.section').forEach(e=>e.classList.toggle('active',e.id===t));document.querySelectorAll('[data-tab]').forEach(e=>e.classList.toggle('active',e.dataset.tab===t));document.querySelectorAll('.mobile-bottom-nav button').forEach(e=>e.classList.toggle('active',e.dataset.tab===t||(e.id==='mobileMore'&&['notes','bills','settings'].includes(t))));if(window.innerWidth<=900)window.scrollTo({top:0,behavior:'instant'});$('pageTitle').textContent=({dashboard:'Dzień dobry! 👋',notes:'Notatki',shopping:'Lista zakupów',calendar:'Wspólny kalendarz',bills:'Rachunki',settings:'Ustawienia'})[t];render()}function render(){if(!current)return;$('who').textContent='● '+data.names[current];$('todayText').textContent=new Date().toLocaleDateString('pl-PL',{weekday:'long',day:'numeric',month:'long',year:'numeric'});$('countNotes').textContent=data.notes.length;$('countShopping').textContent=data.shopping.filter(x=>!x.done).length;$('countEvents').textContent=data.events.filter(x=>x.date>=localDate(new Date())).length;$('countBills').textContent=data.bills.filter(x=>!x.paid).length;$('shoppingBadge').textContent=data.shopping.filter(x=>!x.done).length+' do kupienia';$('boughtCount').textContent=data.shopping.filter(x=>x.done).length;$('clearBought').disabled=!data.shopping.some(x=>x.done);renderNotes();renderShopping();renderCalendar();renderBills();renderDashboard();$('nameA').value=data.names.a;$('nameB').value=data.names.b;document.querySelector('#eventOwner option[value="a"]').textContent=data.names.a;document.querySelector('#eventOwner option[value="b"]').textContent=data.names.b;$('quickEventOwner').querySelector('[value="a"]').textContent=data.names.a;$('quickEventOwner').querySelector('[value="b"]').textContent=data.names.b}
+function noteHTML(n, dashboard=false){return `<div class="item"><div><strong>${esc(n.title)}</strong><small>${esc(data.names[n.by])} · ${new Date(n.at).toLocaleDateString('pl-PL')}</small>${n.body?`<p>${esc(n.body)}</p>`:''}</div><div class="actions"><button class="iconbtn" data-editnote="${esc(n.id)}" title="Edytuj">✎</button>${dashboard?'':`<button class="iconbtn" data-del-note="${esc(n.id)}" title="Usuń">×</button>`}</div></div>`}function renderNotes(){$('notesList').innerHTML=data.notes.length?[...data.notes].reverse().map(noteHTML).join(''):'<p class="empty">Brak notatek. Dodaj pierwszą!</p>'}function shopHTML(s, dashboard=false){return `<div class="item"><div class="row" style="flex-wrap:nowrap"><input class="check" type="checkbox" data-toggle="${esc(s.id)}" ${s.done?'checked':''} aria-label="Kupione: ${esc(s.name)}"><div class="${s.done?'done':''}"><strong>${esc(s.name)}</strong>${s.qty?`<small>${esc(s.qty)}</small>`:''}</div></div>${dashboard?'':`<button class="iconbtn" data-del-shop="${esc(s.id)}" title="Usuń">×</button>`}</div>`}function renderShopping(){$('shoppingList').innerHTML=data.shopping.length?[...data.shopping].sort((a,b)=>Number(a.done)-Number(b.done)).map(shopHTML).join(''):'<p class="empty">Lista jest pusta.</p>'}function eventHTML(e, dashboard=false){return `<div class="item event-${e.owner==='a'?'a':e.owner==='b'?'b':'both'}"><div><strong>${esc(e.title)}</strong><small>${formatDate(e.date)}${e.time?' · '+esc(e.time):''} · ${esc(ownerName(e.owner))}</small>${e.desc?`<p>${esc(e.desc)}</p>`:''}</div>${dashboard?'':`<div class="actions"><button class="iconbtn" type="button" data-edit-event="${esc(e.id)}" title="Edytuj wydarzenie" aria-label="Edytuj wydarzenie">✎</button><button class="iconbtn" type="button" data-del-event="${esc(e.id)}" title="Usuń wydarzenie" aria-label="Usuń wydarzenie">×</button></div>`}</div>`}function renderCalendar(){const y=month.getFullYear(),m=month.getMonth();$('monthLabel').textContent=month.toLocaleDateString('pl-PL',{month:'long',year:'numeric'});const start=(new Date(y,m,1).getDay()+6)%7;const days=new Date(y,m+1,0).getDate();let html=['Pn','Wt','Śr','Cz','Pt','Sb','Nd'].map(x=>`<div class="daylabel">${x}</div>`).join('');for(let i=0;i<Math.ceil((start+days)/7)*7;i++){const d=i-start+1,dt=new Date(y,m,d),ds=localDate(dt),inMonth=d>0&&d<=days,ev=data.events.filter(e=>e.date===ds);html+=`<button class="day ${!inMonth?'dim':''} ${ds===localDate(new Date())?'today':''} ${ds===selected?'selected':''}" data-day="${ds}" aria-label="${formatDate(ds)}"><span class="daynum">${dt.getDate()}</span>${ev.slice(0,2).map(e=>`<span class="dot ${e.owner==='both'?'both':e.owner==='a'?'a':'b'}">${e.time?`<span class="event-clock">${esc(e.time)}</span> `:""}${esc(e.title)}</span>`).join('')}${ev.length>2?'<span class="dot">+'+(ev.length-2)+'</span>':''}</button>`}$('calGrid').innerHTML=html;$('selectedLabel').textContent='Wydarzenia — '+formatDate(selected);const items=data.events.filter(e=>e.date===selected).sort((a,b)=>(a.time||'').localeCompare(b.time||''));$('selectedEvents').innerHTML=items.length?items.map(eventHTML).join(''):'<p class="empty">Brak wydarzeń w tym dniu.</p>'}function formatAccount(value){const digits=String(value||'').toUpperCase().replace(/^PL/,'').replace(/\D/g,'').slice(0,26);return digits.replace(/^(\d{2})(?=\d)/,'$1 ').replace(/(\d{4})(?=\d)/g,'$1 ').trim()}function parseBillDate(value){const m=String(value).trim().match(/^(\d{1,2})[.\/-](\d{1,2})[.\/-](\d{4})$/);if(!m)return null;const d=+m[1],mo=+m[2],y=+m[3],dt=new Date(y,mo-1,d);if(dt.getFullYear()!==y||dt.getMonth()!==mo-1||dt.getDate()!==d)return null;return [y,String(mo).padStart(2,'0'),String(d).padStart(2,'0')].join('-')}const money=n=>Number(n||0).toLocaleString('pl-PL',{style:'currency',currency:'PLN'});function billHTML(b, dashboard=false){const late=!b.paid&&b.due<localDate(new Date());return `<div class="item bill-item"><div style="min-width:0;flex:1"><div class="row"><strong>${esc(b.type)}</strong><span class="bill-status ${b.paid?'paid':late?'late':'pending'}">${b.paid?'Opłacony':late?'Po terminie':'Do zapłaty'}</span></div><small>Faktura: ${esc(b.invoice)}</small><small>Termin: ${formatDate(b.due)}</small><small>Konto: <span class="account">${esc(formatAccount(b.account))}</span></small><div class="row" style="margin-top:9px"><strong>${money(b.amount)}</strong><button class="btn small ghost" data-copy-account="${esc(b.id)}">Kopiuj konto</button></div></div><div class="actions"><button class="btn small ${b.paid?'ghost':''}" data-pay-bill="${esc(b.id)}">${b.paid?'Cofnij':'Opłacony ✓'}</button>${dashboard?'':`<button class="iconbtn" data-del-bill="${esc(b.id)}" title="Usuń rachunek">×</button>`}</div></div>`}function renderBills(){const pending=data.bills.filter(b=>!b.paid);$('billsBadge').textContent=pending.length+' do zapłaty';$('billsTotal').textContent=money(pending.reduce((sum,b)=>sum+Number(b.amount),0));$('billsPaid').textContent=money(data.bills.filter(b=>b.paid).reduce((sum,b)=>sum+Number(b.amount),0));const filter=$('billFilter').value;const shown=data.bills.filter(b=>filter==='all'||(filter==='paid'?b.paid:!b.paid)).sort((a,b)=>a.due.localeCompare(b.due));$('billsList').innerHTML=shown.length?shown.map(billHTML).join(''):'<p class="empty">Brak rachunków w tym widoku.</p>'}function renderDashboard(){$('dashBills').innerHTML=data.bills.filter(b=>!b.paid).sort((a,b)=>a.due.localeCompare(b.due)).slice(0,3).map(b=>billHTML(b,true)).join('')||'<p class="empty">Wszystkie rachunki opłacone 🎉</p>';$('dashShopping').innerHTML=data.shopping.filter(s=>!s.done).map(s=>shopHTML(s,true)).join('')||'<p class="empty">Wszystko kupione 🎉</p>';$('dashNotes').innerHTML=[...data.notes].reverse().slice(0,2).map(n=>noteHTML(n,true)).join('')||'<p class="empty">Nie ma jeszcze notatek.</p>';$('dashEvents').innerHTML=data.events.filter(e=>e.date>=localDate(new Date())).sort((a,b)=>(a.date+a.time).localeCompare(b.date+b.time)).slice(0,3).map(e=>eventHTML(e,true)).join('')||'<p class="empty">Brak nadchodzących wydarzeń.</p>'}let pendingDeleteEventId=null;function confirmDelete(title,message){return new Promise(resolve=>{const dialog=$('deleteConfirmDialog');$('deleteConfirmTitle').textContent=title;$('deleteConfirmText').textContent=message;$('deleteConfirmYes').textContent='Usuń';let settled=false;function finish(yes){if(settled)return;settled=true;dialog.removeEventListener('close',closed);$('deleteConfirmYes').removeEventListener('click',yesClick);$('deleteConfirmCancel').removeEventListener('click',noClick);if(dialog.open)dialog.close();resolve(yes)}function yesClick(){finish(true)}function noClick(){finish(false)}function closed(){finish(false)}$('deleteConfirmYes').addEventListener('click',yesClick);$('deleteConfirmCancel').addEventListener('click',noClick);dialog.addEventListener('close',closed);dialog.showModal()})}function openEventDeleteDialog(item){pendingDeleteEventId=item.id;$('eventDeleteText').textContent='Wydarzenie „'+item.title+'” zostanie trwale usunięte. Tej czynności nie można cofnąć.';$('eventDeleteDialog').showModal()}$('eventDeleteCancel').addEventListener('click',()=>$('eventDeleteDialog').close());$('eventDeleteDialog').addEventListener('close',()=>{pendingDeleteEventId=null});$('eventDeleteConfirm').addEventListener('click',()=>{if(pendingDeleteEventId){data.events=data.events.filter(x=>x.id!==pendingDeleteEventId);if(editingEventId===pendingDeleteEventId)$('cancelEventEdit').click();save();toast('Wydarzenie usunięte')}$('eventDeleteDialog').close()});async function logout(){
+  if(channel){client.removeChannel(channel);channel=null;}
+  await writeQueue.catch(()=>{});
+  await client.auth.signOut();
+  current=null;houseId=null;members=[];data=structuredClone(initial);synced=clone(data);
+  $('app').classList.add('hidden');$('login').classList.remove('hidden');
+  $('password').value='';$('loginError').textContent='';
+}
+$('loginForm').addEventListener('submit',async e=>{
+  e.preventDefault();$('loginError').textContent='';
+  const button=$('loginSubmit');button.disabled=true;button.textContent='Logowanie…';
+  try{
+    if(!client)throw new Error('Nie udało się załadować biblioteki Supabase. Sprawdź połączenie z internetem.');
+    const username=$('username').value.trim().toLowerCase();
+    const result=await fetch(SB_URL+'/functions/v1/super-function',{
+      method:'POST',
+      headers:{'Content-Type':'application/json','apikey':SB_KEY},
+      cache:'no-store',
+      body:JSON.stringify({username,password:$('password').value})
+    });
+    const response=await result.json().catch(()=>({}));
+    if(!result.ok)throw new Error(response.error||'Nie udało się zalogować.');
+    const {data:sessionResult,error:sessionError}=await client.auth.setSession({
+      access_token:response.access_token, refresh_token:response.refresh_token
+    });
+    if(sessionError||!sessionResult.user)throw sessionError||new Error('Brak sesji użytkownika.');
+    await enterApp(sessionResult.user);
+    $('password').value='';
+  }catch(err){$('loginError').textContent=err.message||'Nie udało się zalogować.';}
+  finally{button.disabled=false;button.textContent='Zaloguj się →';}
+});
+$('nav').addEventListener('click',e=>{const b=e.target.closest('[data-tab]');if(b)showTab(b.dataset.tab)});document.addEventListener('click',async e=>{const b=e.target.closest('[data-goto]');if(b)showTab(b.dataset.goto);const n=e.target.closest('[data-del-note]');if(n&&await confirmDelete('Usunąć notatkę?','Wybrana notatka zostanie trwale usunięta. Tej czynności nie można cofnąć.')){data.notes=data.notes.filter(x=>x.id!==n.dataset.delNote);save()}const sn=e.target.closest('[data-del-shop]');if(sn&&await confirmDelete('Usunąć produkt?','Produkt zostanie usunięty z listy zakupów. Tej czynności nie można cofnąć.')){data.shopping=data.shopping.filter(x=>x.id!==sn.dataset.delShop);save()}const ee=e.target.closest('[data-edit-event]');if(ee){const item=data.events.find(x=>x.id===ee.dataset.editEvent);if(item){editingEventId=item.id;$('eventTitle').value=item.title;$('eventDate').value=item.date;$('eventTime').value=item.time||'';$('eventOwner').value=item.owner;$('eventDesc').value=item.desc||'';$('eventFormHeading').textContent='Edytuj wydarzenie';$('saveEventBtn').textContent='Zapisz zmiany';$('cancelEventEdit').classList.remove('hidden');$('eventForm').scrollIntoView({behavior:'smooth',block:'start'});$('eventTitle').focus()}}const ev=e.target.closest('[data-del-event]');if(ev){const id=ev.dataset.delEvent;const item=data.events.find(x=>x.id===id);if(item)openEventDeleteDialog(item)}const edit=e.target.closest('[data-editnote]');if(edit){const n=data.notes.find(x=>x.id===edit.dataset.editnote);if(n){openNoteEditDialog(n)}}const day=e.target.closest('[data-day]');if(day){selected=day.dataset.day;$('eventDate').value=selected;const [y,m]=selected.split('-').map(Number);month=new Date(y,m-1,1);renderCalendar()}});document.addEventListener('change',e=>{if(e.target.matches('[data-toggle]')){const s=data.shopping.find(x=>x.id===e.target.dataset.toggle);if(s){s.done=e.target.checked;save()}}});$('noteForm').addEventListener('submit',e=>{e.preventDefault();data.notes.push({id:uid(),title:$('noteTitle').value.trim(),body:$('noteBody').value.trim(),by:current,at:new Date().toISOString()});save();e.target.reset();toast('Notatka dodana')});$('shoppingForm').addEventListener('submit',e=>{e.preventDefault();data.shopping.push({id:uid(),name:$('productName').value.trim(),qty:$('productQty').value.trim(),done:false});save();e.target.reset();toast('Produkt dodany')});$('clearBought').addEventListener('click',async ()=>{const n=data.shopping.filter(s=>s.done).length;if(!n)return;if(await confirmDelete('Usunąć kupione produkty?','Usuniesz '+n+' zaznaczonych jako kupione produktów. Pozostałe produkty zostaną na liście.')){data.shopping=data.shopping.filter(s=>!s.done);save();toast('Usunięto kupione produkty')}});$('billAccount').addEventListener('input',e=>{const el=e.target;const before=el.value.slice(0,el.selectionStart).replace(/\D/g,'').length;el.value=formatAccount(el.value);let pos=0,count=0;while(pos<el.value.length&&count<before){if(/\d/.test(el.value[pos]))count++;pos++}el.setSelectionRange(pos,pos)});$('billForm').addEventListener('submit',e=>{e.preventDefault();const due=parseBillDate($('billDue').value);if(!due)return toast('Podaj poprawną datę, np. 5.11.2026');const account=$('billAccount').value.replace(/\s/g,'').toUpperCase();if(!/^(PL)?[0-9]{26}$/.test(account))return toast('Podaj poprawny polski numer konta (26 cyfr)');const amount=Number($('billAmount').value);if(!Number.isFinite(amount)||amount<=0)return toast('Podaj poprawną kwotę');data.bills.push({id:uid(),type:$('billType').value,invoice:$('billInvoice').value.trim(),due,account,amount:Math.round(amount*100)/100,paid:false});save();e.target.reset();toast('Rachunek dodany')});$('billFilter').addEventListener('change',renderBills);document.addEventListener('click',async e=>{const paid=e.target.closest('[data-pay-bill]');if(paid){const b=data.bills.find(x=>x.id===paid.dataset.payBill);if(b){b.paid=!b.paid;save();toast(b.paid?'Oznaczono jako opłacony':'Przywrócono do zapłaty')}}const del=e.target.closest('[data-del-bill]');if(del&&await confirmDelete('Usunąć rachunek?','Wybrany rachunek zostanie trwale usunięty, razem z zapisanymi szczegółami płatności.')){data.bills=data.bills.filter(x=>x.id!==del.dataset.delBill);save()}const cp=e.target.closest('[data-copy-account]');if(cp){const b=data.bills.find(x=>x.id===cp.dataset.copyAccount);if(b){if(navigator.clipboard&&window.isSecureContext)navigator.clipboard.writeText(b.account).then(()=>toast('Skopiowano numer konta')).catch(()=>toast('Nie udało się skopiować'));else{const t=document.createElement('textarea');t.value=b.account;document.body.append(t);t.select();const ok=document.execCommand('copy');t.remove();toast(ok?'Skopiowano numer konta':'Nie udało się skopiować')}}}});$('eventForm').addEventListener('submit',e=>{e.preventDefault();const date=$('eventDate').value;if(!date)return;const payload={title:$('eventTitle').value.trim(),date,time:$('eventTime').value,owner:$('eventOwner').value,desc:$('eventDesc').value.trim()};if(editingEventId){const existing=data.events.find(x=>x.id===editingEventId);if(existing)Object.assign(existing,payload);else data.events.push({id:uid(),...payload})}else data.events.push({id:uid(),...payload});const wasEditing=!!editingEventId;editingEventId=null;$('eventFormHeading').textContent='Dodaj wydarzenie';$('saveEventBtn').textContent='+ Zapisz wydarzenie';$('cancelEventEdit').classList.add('hidden');selected=date;const [y,m]=date.split('-').map(Number);month=new Date(y,m-1,1);save();e.target.reset();$('eventDate').value=selected;toast(wasEditing?'Zapisano zmiany wydarzenia':'Wydarzenie dodane')});$('cancelEventEdit').addEventListener('click',()=>{editingEventId=null;$('eventForm').reset();$('eventDate').value=selected;$('eventFormHeading').textContent='Dodaj wydarzenie';$('saveEventBtn').textContent='+ Zapisz wydarzenie';$('cancelEventEdit').classList.add('hidden')});$('prevMonth').addEventListener('click',()=>{month=new Date(month.getFullYear(),month.getMonth()-1,1);renderCalendar()});$('nextMonth').addEventListener('click',()=>{month=new Date(month.getFullYear(),month.getMonth()+1,1);renderCalendar()});$('goToday').addEventListener('click',()=>{month=new Date(new Date().getFullYear(),new Date().getMonth(),1);selected=localDate(new Date());$('eventDate').value=selected;renderCalendar()});$('profileForm').addEventListener('submit',e=>{e.preventDefault();data.names.a=$('nameA').value.trim();data.names.b=$('nameB').value.trim();save();toast('Zapisano imiona')});$('pinForm').addEventListener('submit',async e=>{
+  e.preventDefault();const password=$('newPassword').value;
+  if(password.length<8)return toast('Hasło powinno mieć co najmniej 8 znaków');
+  const {error}=await client.auth.updateUser({password});
+  if(error)return notifyError(error);
+  e.target.reset();toast('Hasło zostało zmienione');
+});$('logout').addEventListener('click',logout);$('logoutSettings').addEventListener('click',logout);
+let quickMode='shopping';const quickLabels={shopping:'Dodaj produkt',calendar:'Dodaj wydarzenie',notes:'Dodaj notatkę'};
+function openQuick(mode){quickMode=mode;$('quickForm').reset();$('quickHeading').textContent=quickLabels[mode];$('quickShopping').classList.toggle('hidden',mode!=='shopping');$('quickCalendar').classList.toggle('hidden',mode!=='calendar');$('quickNotes').classList.toggle('hidden',mode!=='notes');$('quickEventDate').value=localDate(new Date());$('quickDialog').showModal();setTimeout(()=>{const id={shopping:'quickProduct',calendar:'quickEventTitle',notes:'quickNoteTitle'}[mode];$(id).focus()},50)}
+let editingNoteId=null;
+function openNoteEditDialog(note){
+ editingNoteId=note.id;
+ $('noteEditTitle').value=note.title||'';
+ $('noteEditBody').value=note.body||'';
+ $('noteEditDialog').showModal();
+ $('noteEditTitle').focus();
+}
+$('noteEditCancel').addEventListener('click',()=>{$('noteEditDialog').close()});
+$('noteEditDialog').addEventListener('close',()=>{editingNoteId=null});
+$('noteEditForm').addEventListener('submit',e=>{
+ e.preventDefault();
+ const note=data.notes.find(n=>n.id===editingNoteId);
+ if(!note)return $('noteEditDialog').close();
+ const title=$('noteEditTitle').value.trim();
+ if(!title)return toast('Wpisz tytuł notatki');
+ note.title=title.slice(0,100);
+ note.body=$('noteEditBody').value.slice(0,3000);
+ save();
+ $('noteEditDialog').close();
+ toast('Notatka zaktualizowana');
+});
+document.addEventListener('click',e=>{const q=e.target.closest('[data-quick]');if(q)openQuick(q.dataset.quick);const t=e.target.closest('.mobile-bottom-nav [data-tab]');if(t)showTab(t.dataset.tab);const m=e.target.closest('[data-more-tab]');if(m){$('moreDialog').close();showTab(m.dataset.moreTab)}});
+$('quickClose').addEventListener('click',()=>$('quickDialog').close());$('quickCancel').addEventListener('click',()=>$('quickDialog').close());$('mobileMore').addEventListener('click',()=>$('moreDialog').showModal());$('moreClose').addEventListener('click',()=>$('moreDialog').close());
+$('quickForm').addEventListener('submit',e=>{e.preventDefault();if(quickMode==='shopping'){const name=$('quickProduct').value.trim();if(!name)return toast('Wpisz nazwę produktu');data.shopping.push({id:uid(),name,qty:$('quickQty').value.trim(),done:false})}else if(quickMode==='calendar'){const title=$('quickEventTitle').value.trim(),date=$('quickEventDate').value;if(!title||!date)return toast('Podaj nazwę i datę wydarzenia');data.events.push({id:uid(),title,date,time:$('quickEventTime').value,owner:$('quickEventOwner').value,desc:$('quickEventDesc').value.trim()})}else{const title=$('quickNoteTitle').value.trim();if(!title)return toast('Wpisz tytuł notatki');data.notes.push({id:uid(),title,body:$('quickNoteBody').value.trim(),by:current,at:new Date().toISOString()})}save();$('quickDialog').close();toast('Dodano ✓')});
+$('eventDate').value=selected;
+(async function init(){
+  if(!window.supabase){$('loginError').textContent='Nie udało się załadować Supabase. Sprawdź internet i odśwież stronę.';return;}
+  client=window.supabase.createClient(SB_URL,SB_KEY,{auth:{persistSession:true,autoRefreshToken:true,detectSessionInUrl:true}});
+  const {data:sessionData,error}=await client.auth.getSession();
+  if(error){console.warn(error);return;}
+  if(sessionData.session?.user){try{await enterApp(sessionData.session.user)}catch(err){$('loginError').textContent=err.message;}}
+})();})();
+</script></body></html>
