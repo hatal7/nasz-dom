@@ -40,6 +40,20 @@
 .heading-line #todayText{font-size:clamp(14px,1.3vw,17px);line-height:1.4;color:#bfc8dd;font-weight:500}
 @media(max-width:540px){.heading-line{gap:3px 9px}.heading-line h1{font-size:19px}.heading-line #todayText{font-size:14px}.top{align-items:center;gap:8px}.userpill{white-space:nowrap;padding:7px 9px}}
 @media(max-width:360px){.heading-line{display:block}.heading-line #todayText{margin-top:3px}}
+
+/* Lista zakupów na pulpicie przewija się niezależnie, a po dotarciu do
+   początku/końca gest naturalnie przechodzi na przewijanie całej strony.
+   overscroll-behavior:auto jest ważne: 'contain' blokuje scroll chaining. */
+#dashboard #dashShopping.shopping-scroll{
+  max-height:330px;
+  overflow-y:auto;
+  overscroll-behavior-y:auto;
+  touch-action:pan-y;
+  -webkit-overflow-scrolling:touch;
+}
+@media(max-width:900px){
+  #dashboard #dashShopping.shopping-scroll{max-height:300px}
+}
 </style><style id="theme-styles">
 /* Motywy: zachowujemy oryginalny ciemny, jasny w tonacji beżowo-kawowej */
 .theme-toggle{appearance:none;display:inline-flex;align-items:center;justify-content:center;gap:7px;border-radius:999px;border:1px solid #41465a;background:#262c3c;color:#f4f5ff;padding:9px 12px;min-height:40px;font-weight:700;font-size:13px;white-space:nowrap;cursor:pointer}
